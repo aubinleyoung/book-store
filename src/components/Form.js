@@ -2,12 +2,12 @@ import React from 'react';
 
 const Form = () => (
   <main>
-    <h2>Add New Book</h2>
-    <form className="form flex">
 
-      <input className="title" type="text" placeholder="title" />
-      <input className="atuthor" type="text" placeholder="author" />
-      <button className="add-btn" type="submit">Add Book</button>
+    <form className="form flex p-10  gap-2">
+
+      <input className="title rounded-xl p-5" type="text" placeholder="title" />
+      <input className="atuthor rounded-xl p-5" type="text" placeholder="author" />
+      <button className="add-btn bg-blue-500 rounded-xl p-5" type="submit">Add Book</button>
 
     </form>
   </main>

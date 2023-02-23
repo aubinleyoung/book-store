@@ -7,6 +7,7 @@ import Categories from './components/Categories';
 
 const App = () => (
   <>
+
     <Navbar />
     <Routes>
       <Route path="/" element={<Books />} />

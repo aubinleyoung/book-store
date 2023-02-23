@@ -1,11 +1,16 @@
 import React from 'react';
 import Form from './Form';
-import Book from './Book';
+// import Book from './Book';
 
 const Books = () => (
-  <main className="w-full h-screen overflow-hidden bg-gray-100 flex flex-col items-center">
-    <section className="mt-5 w-10/12 flex flex-col items-stretch gap-y-2 booklist">
-      <Book />
+  <main className="w-full h-fit text-center bg-gray-300">
+    <section className="">
+
+      <div>
+        {' '}
+        {/* <Book /> */}
+      </div>
+
     </section>
     <Form />
   </main>
