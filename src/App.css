@@ -1,5 +1,8 @@
 .App {
-  background: gray;
-  width: 100%;
+  background: #f3f4f6;
   height: 100vh;
+}
+
+button {
+  color: white;
 }

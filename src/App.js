@@ -6,7 +6,7 @@ import Books from './components/Books';
 import Categories from './components/Categories';
 
 const App = () => (
-  <>
+  <main className="App">
 
     <Navbar />
     <Routes>
@@ -14,7 +14,7 @@ const App = () => (
       <Route path="/books" element={<Books />} />
       <Route path="/categories" element={<Categories />} />
     </Routes>
-  </>
+  </main>
 );
 
 export default App;

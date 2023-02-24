@@ -1,23 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Book = (props) => {
-  const { book } = props;
-  const { author, title } = book;
+const Book = ({ item }) => (
+  <main className="pl-10 ">
 
-  return (
-    <main className="w-full flex items-center justify-between">
-      <div className="flex border-2 w-40 h-10 gap-5">
-        <p>{author}</p>
-        <p>by</p>
-        <p>{title}</p>
-        <button type="submit">Delete</button>
+    <div className="flex justify-between bg-white w-[90%] rounded-xl m-auto p-5">
+      <div className="font-bold text-blue-500">
+        <p>
+          Title:
+          <span>{item.title}</span>
+        </p>
+        <p>
+          Author:
+          <span>{item.author}</span>
+        </p>
+
       </div>
-    </main>
+      <button type="submit" className="add-btn bg-blue-500 rounded-xl p-5">Delete</button>
+    </div>
+  </main>
+);
 
-  );
-};
-Book.propTypes = {
-  book: PropTypes.instanceOf(Object).isRequired,
-};
+Book.propTypes = { item: PropTypes.shape().isRequired };
 export default Book;
