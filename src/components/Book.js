@@ -1,25 +1,47 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { removeBook } from '../redux/books/booksSlice';
 
-const Book = ({ item }) => (
-  <main className="pl-10 ">
-    <div className="flex justify-between bg-white w-[90%] rounded-xl m-auto p-5">
-      <div className="font-bold text-blue-500">
-        <p>
-          Title:
-          <span>{item.title}</span>
-        </p>
-        <p>
-          Author:
-          <span>{item.author}</span>
-        </p>
+const Book = ({ item }) => {
+  const dispatch = useDispatch();
+  const handleDelete = (id) => {
+    dispatch(removeBook({ id }));
+  };
+
+  return (
+    <>
+      <div className="border-2 p-5">
+        <section className="flex flex-col text-blue-500">
+          <p>
+            Author:
+            <span>
+              {' '}
+              {item.author}
+            </span>
+          </p>
+          <p>
+            Title:
+            <span>
+              {' '}
+              {item.title}
+            </span>
+          </p>
+          <p>
+            Category:
+            <span>
+              {' '}
+              {item.category}
+            </span>
+          </p>
+          <button onClick={() => handleDelete(item.item_id)} type="button" className="bg-red-500 rounded-xl p-1 w-16">
+            remove
+          </button>
+        </section>
       </div>
-      <button type="submit" className="add-btn bg-blue-500 rounded-xl p-5">
-        Delete
-      </button>
-    </div>
-  </main>
-);
+    </>
+  );
+};
 
-Book.propTypes = { item: PropTypes.shape().isRequired };
 export default Book;
+Book.propTypes = { item: PropTypes.objectOf.isRequired };
