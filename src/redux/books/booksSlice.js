@@ -1,26 +1,37 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const appKey = 'u40ajfPiLMr5vadQ5qEo';
+const baseURL = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${appKey}/books`;
+
+export const getBooksList = () => async (dispatch) => {
+  const books = await fetch(`${baseURL}`).then((response) => response.json());
+  const booksID = Object.keys(books);
+  const formatedBooks = [];
+  booksID.map((key) => formatedBooks.push({
+    id: key,
+    title: books[key][0].title,
+    author: books[key][0].author,
+    category: books[key][0].category,
+  }));
+  dispatch(getBooks(formatedBooks));
+};
+
+// export const postBook = (newBook) => async (dispatch) => {
+//   await fetch(`${baseURL}`, {
+//     method: 'POST',
+//     body: JSON.stringify({
+//       item_id: newBook.id,
+//       title: newBook.title,
+//       author: newBook.author,
+//       category: newBook.category,
+//     }),
+//     headers: { 'Content-type': 'application/json; charset=UTF-8' },
+//   });
+//   dispatch(addBook(newBook));
+// };
+
 const initialState = {
-  books: [
-    {
-      item_id: 'item1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item2',
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item3',
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-    },
-  ],
+  books: [],
 };
 
 export const bookSlice = createSlice({
