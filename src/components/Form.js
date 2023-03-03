@@ -17,7 +17,7 @@ const Form = () => {
       title,
       author,
       item_id : uniqid(),
-      category: "ggggg"
+      category: "Science fiction"
     }
     e.target.reset()
     dispatch(postBook(book));
@@ -25,12 +25,12 @@ const Form = () => {
   };
 
   return (
-    <main className="w-full form flex flex-col pl-10 ">
-      <h1 className="self-star text-gray-500 text-2xl font-bold ">Add New Book</h1>
-      <form className="form flex p-10  gap-2  bg-gray-300 m-auto w-[90%] rounded-xl" onSubmit={handleAddBook}>
-        <input className="title rounded-xl p-5 w-[50%]" type="text" placeholder="title" onChange={(e) => setTitle(e.target.value)} />
-        <input className="atuthor rounded-xl p-5  w-[40%]" type="text" placeholder="author" onChange={(e) => setAuthor(e.target.value)} />
-        <button className="add-btn bg-blue-500 rounded-xl p-5" type="submit">Add Book</button>
+    <main className="w-[90%] m-auto form flex flex-col  border-t-2 pt-5">
+      <h1 className="self-star text-gray-500 text-2xl font-bold ">Add New Book</h1><br />
+      <form className="form flex gap-5 m-auto w-[100%] h-10 " onSubmit={handleAddBook}>
+        <input className="title border-2 p-5 w-[50%] outline-none rounded-sm" type="text" placeholder="Title" onChange={(e) => setTitle(e.target.value)} />
+        <input className="atuthor border-2 p-5  w-[35%] outline-none rounded-sm" type="text" placeholder="Author" onChange={(e) => setAuthor(e.target.value)} />
+        <button className="add-btn bg-[#0290ff] rounded-sm ml-[10rem] w-40" type="submit">Add Book</button>
       </form>
     </main>
   );
