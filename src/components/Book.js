@@ -1,12 +1,12 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeBook } from '../redux/books/booksSlice';
+import { deleteBook } from '../redux/books/booksSlice';
 
 const Book = ({ item }) => {
   const dispatch = useDispatch();
   const handleDelete = (id) => {
-    dispatch(removeBook({ id }));
+    dispatch(deleteBook(id));
   };
 
   return (
@@ -34,7 +34,11 @@ const Book = ({ item }) => {
               {item.category}
             </span>
           </p>
-          <button onClick={() => handleDelete(item.item_id)} type="button" className="bg-red-500 rounded-xl p-1 w-16">
+          <button
+            onClick={() => handleDelete(item.id)}
+            type="button"
+            className="bg-red-500 rounded-xl p-1 w-16"
+          >
             remove
           </button>
         </section>
