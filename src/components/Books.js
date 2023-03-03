@@ -1,27 +1,27 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import Form from './Form';
 import Book from './Book';
-import { getBooksList } from '../redux/books/booksSlice';
 
-const Books = () => {
-  const booklists = useSelector((state) => state.books.books);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getBooksList());
-  }, [dispatch]);
-
-  return (
-    <div className="flex flex-col gap-5 bg-[#f3f4f6;] ">
-      <div className="flex flex-col gap-5 ">
-        {booklists.map((item) => (
-          <Book key={item.item_id} item={item} />
-        ))}
-      </div>
-      <br />
-      <Form />
+const Books = ({ props }) => (
+  <div className="flex flex-col gap-5 bg-[#f3f4f6;] ">
+    <div className="flex flex-col gap-5 ">
+      {props.map((item) => (
+        <Book key={item.item_id} item={item} />
+      ))}
     </div>
-  );
+    <br />
+    <Form />
+  </div>
+);
+
+Books.propTypes = {
+  props: PropTypes.arrayOf(
+    PropTypes.shape({
+      item_id: PropTypes.string.isRequired,
+      // add more properties here as needed
+    }).isRequired,
+  ).isRequired,
+  map: PropTypes.func.isRequired,
 };
 
 export default Books;
