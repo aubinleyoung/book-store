@@ -68,11 +68,11 @@ const Book = ({ item }) => {
               </p>
             </div>
             <hr className="w-px h-16 bg-gray-300" />
-            <div className="book-status">
-              <p className="text-md text-gray-400">CURRENT CHAPTER</p>
-              <p className="text-md text-black">Chapter 17</p>
+            <div className="book-status ">
+              <p className="text-sm text-gray-400">CURRENT CHAPTER</p>
+              <p className="text-sm text-black">Chapter 17</p>
               <p className="my-1 text-gray-600" />
-              <button className="py-2 px-10 mt-1 flex items-center justify-center rounded-sm bg-[#0290ff] text-white" type="button">UPDATE PROGRESS</button>
+              <button className="py-2 px-10 mt-1flex items-center justify-center rounded-sm bg-[#0290ff] text-white" type="button">UPDATE PROGRESS</button>
             </div>
           </section>
         </div>

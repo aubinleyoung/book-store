@@ -2,6 +2,7 @@
 
 <a name="readme-top"></a>
 ![](https://img.shields.io/badge/Microverse-blueviolet)
+![](./src/assets/images/view.jpg)
 
 # 📗 Table of Contents
 

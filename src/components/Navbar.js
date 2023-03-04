@@ -5,7 +5,7 @@ import '../App.css';
 
 const Header = () => (
   <header className="w-full h-20 bg-white flex justify-between items-center px-16">
-    <div className="flex justify-start items-center gap-16 ">
+    <div className="flex justify-start items-center gap-16">
       <h1 className="text-[#0290ff] font-bold text-2xl">Bookstore CMS </h1>
       <ul className="flex gap-5 text-sm">
         <Link to="/" className=" text-[#121212] ">
