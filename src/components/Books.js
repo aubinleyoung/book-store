@@ -3,7 +3,7 @@ import Form from './Form';
 import Book from './Book';
 
 const Books = ({ props }) => (
-  <div className="flex flex-col gap-5 bg-[#f3f4f6;] ">
+  <div className="flex flex-col gap-5 bg-[#fafafa] py-10  ">
     <div className="flex flex-col gap-5 ">
       {props.map((item) => (
         <Book key={item.item_id} item={item} />

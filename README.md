@@ -36,7 +36,6 @@
 - **[Redux]**
 - **[Tailwind]**
 - **[HTML5]**
-- **[Sass]**
 - **[Webpack]**
 - **[Create-React-App]**
 - **[Gitflow]**
@@ -122,7 +121,9 @@ Clone this repository to your desired folder:
 ## 🔭 Future Features <a name="future-features"></a>
 
 
-- [ ] **[Use_API]**
+- [ ] **[Implemet_the_update_progress_button]**
+- [ ] **[Add_a_feature_to_edith_books]**
+- [ ] **[Add_a_feature_to_leave_a_comment_on_a_book]**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
